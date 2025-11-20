@@ -1,7 +1,9 @@
-<img width="1195" height="319" alt="Screenshot from 2025-11-20 14-57-38" src="https://github.com/user-attachments/assets/45b08125-ae24-4a47-8bc7-40d117592d41" />
-
+#TASK - Case Task
 <img width="1280" height="800" alt="Screenshot from 2025-11-20 14-57-52" src="https://github.com/user-attachments/assets/9499c61e-15ca-4b3e-832e-b86ace5fe3cf" />
 
+<img width="1195" height="319" alt="Screenshot from 2025-11-20 14-57-38" src="https://github.com/user-attachments/assets/45b08125-ae24-4a47-8bc7-40d117592d41" />
+
+#TASK - Name Task
 <img width="816" height="583" alt="Screenshot from 2025-11-20 15-33-14" src="https://github.com/user-attachments/assets/859586cb-1997-4d79-843c-af7b0a67c0cc" />
 
 <img width="779" height="290" alt="Screenshot from 2025-11-20 15-33-59" src="https://github.com/user-attachments/assets/6da0cf6d-a2f1-4d26-b85d-765bc0b5cb68" />
@@ -17,4 +19,5 @@
 <img width="1280" height="795" alt="Screenshot from 2025-11-20 15-44-43" src="https://github.com/user-attachments/assets/299dd952-9d4e-4fee-9c7c-51ecf2563179" />
 
 <img width="1280" height="795" alt="Screenshot from 2025-11-20 15-45-30" src="https://github.com/user-attachments/assets/81aee809-caf3-4baa-9c23-ebe809b5d52d" />
+
 
