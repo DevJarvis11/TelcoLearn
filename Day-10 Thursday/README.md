@@ -10,6 +10,25 @@
 
 
 #TASK - System Stats
+
+
+                read -p "Do you need system stats: " t
+                if t==cpu; then
+                        lscpu
+                elif t==memory; then
+                        free -h
+                elif t==disc; then
+                        df -h
+                elif t==network; then
+                        ip -a
+                else
+                        echo "Bye Bye"
+                fi
+
+
+
+
+
 <img width="819" height="580" alt="Screenshot from 2025-11-20 15-42-36" src="https://github.com/user-attachments/assets/91a16709-4fcf-4b02-b6cd-aa262ce734ca" />
 
 <img width="1280" height="795" alt="Screenshot from 2025-11-20 15-43-13" src="https://github.com/user-attachments/assets/c25ec946-4e3a-4dcc-a1d7-f3b3aad2564f" />
@@ -19,5 +38,6 @@
 <img width="1280" height="795" alt="Screenshot from 2025-11-20 15-44-43" src="https://github.com/user-attachments/assets/299dd952-9d4e-4fee-9c7c-51ecf2563179" />
 
 <img width="1280" height="795" alt="Screenshot from 2025-11-20 15-45-30" src="https://github.com/user-attachments/assets/81aee809-caf3-4baa-9c23-ebe809b5d52d" />
+
 
 
