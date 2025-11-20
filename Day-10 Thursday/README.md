@@ -106,3 +106,10 @@
                                 ;;
                             
                             esac
+
+
+<img width="817" height="573" alt="Screenshot from 2025-11-20 19-42-03" src="https://github.com/user-attachments/assets/79046358-d6a7-413d-957c-000ed70c8b6d" />
+
+<img width="817" height="573" alt="Screenshot from 2025-11-20 19-52-46" src="https://github.com/user-attachments/assets/e0f60f29-6969-486d-83f9-c10734e9f954" />
+
+<img width="817" height="573" alt="Screenshot from 2025-11-20 20-20-11" src="https://github.com/user-attachments/assets/afe0a242-0af4-41f3-bd19-a86170473138" />
