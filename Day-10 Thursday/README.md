@@ -62,6 +62,77 @@
 
 
 
+**TASK - File Management Script**
+
+#!/bin/bash
+
+                                                    # --- Main Menu Display ---
+                                                    echo "--- Simple File Operations ---"
+                                                    echo "U@sys: Do you wish to create(1), delete(2) or move(3) file?"
+                                                    read -p "Enter choice (1/2/3): " CHOICE
+                                                    
+                                                    # --- Input Validation and Execution ---
+                                                    
+                                                    case $CHOICE in
+                                                        1)
+                                                            # Create Operation
+                                                            read -p "Enter the file name to create: " FILENAME
+                                                            if touch "$FILENAME"; then
+                                                                echo "** $FILENAME created.**"
+                                                            else
+                                                                echo "Error: Could not create file $FILENAME."
+                                                            fi
+                                                            ;;
+                                                    
+                                                        2)
+                                                            # Delete Operation
+                                                            read -p "Enter file/dir name to delete (file or dir): " TYPE
+                                                            read -p "Enter the name of the item to delete: " ITEM_NAME
+                                                    
+                                                            if [[ "$TYPE" == "file" ]]; then
+                                                                if [[ -f "$ITEM_NAME" ]]; then
+                                                                    rm "$ITEM_NAME"
+                                                                    echo "** File deleted.**"
+                                                                else
+                                                                    echo "File not found."
+                                                                fi
+                                                            elif [[ "$TYPE" == "dir" ]]; then
+                                                                if [[ -d "$ITEM_NAME" ]]; then
+                                                                    rm -r "$ITEM_NAME" # -r needed for directories
+                                                                    echo "** Directory deleted.**"
+                                                                else
+                                                                    echo "Dir not found."
+                                                                fi
+                                                            else
+                                                                echo "Error: Invalid type. Please enter 'file' or 'dir'."
+                                                            fi
+                                                            ;;
+                                                    
+                                                        3)
+                                                            # Move Operation
+                                                            read -p "Which item do you wish to move (file or dir)? " TYPE
+                                                            read -p "Enter the source item name: " SOURCE
+                                                            read -p "Enter the destination directory: " DEST
+                                                    
+                                                            if [[ -f "$SOURCE" || -d "$SOURCE" ]]; then # Checks if source exists (file or dir)
+                                                                if [[ -d "$DEST" ]]; then # Checks if destination is a valid directory
+                                                                    mv "$SOURCE" "$DEST"
+                                                                    echo "** Item found, moving.**"
+                                                                else
+                                                                    echo "Dir not found."
+                                                                fi
+                                                            else
+                                                                echo "File/Dir not found."
+                                                            fi
+                                                            ;;
+                                                    
+                                                        *)
+                                                            # Default case for invalid input
+                                                            echo "Error: Invalid operation ($CHOICE). Please enter 1, 2, or 3."
+                                                            ;;
+                                                    esac
+                                                    
+                                                    echo "--- Operation complete. ---"
 
 
 
