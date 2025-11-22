@@ -6,9 +6,9 @@ This project is a Linux shell script designed to help developers extract relevan
 <br>
 
 
-<h3>📝 Problem Statement</h3>
+<h3>📝 Task Description </h3>
 
-Developers often work with very large and noisy log files containing thousands of lines. Manually searching for specific events or errors becomes time-consuming and error-prone.
+A developer needs filtered log entries from a noisy event log for debugging a module.
 <br>
 <br>
 <br>
@@ -67,6 +67,7 @@ Developers often work with very large and noisy log files containing thousands o
 <br>
 <br>
 <img width="1919" height="1108" alt="image" src="https://github.com/user-attachments/assets/203b2a11-44c1-49f3-af16-b5657958259c" />
+
 
 
 
