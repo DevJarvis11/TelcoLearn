@@ -13,6 +13,12 @@ A developer needs filtered log entries from a noisy event log for debugging a mo
 <br>
 <br>
 
+<h3> Expected Output </h3>
+
+Submit a file filtered_logs_s1_q5.txt with extracted log lines.
+<br>
+<br>
+<br>
 
             GNU nano 6.2                                                                            log_filter.sh *
                   
@@ -67,6 +73,7 @@ A developer needs filtered log entries from a noisy event log for debugging a mo
 <br>
 <br>
 <img width="1919" height="1108" alt="image" src="https://github.com/user-attachments/assets/203b2a11-44c1-49f3-af16-b5657958259c" />
+
 
 
 
