@@ -1,3 +1,3 @@
-# Week2Day8
+# TelcoLearn Updates
 
-All Tasks of Week 2 Recorded Here
+All Tasks of TelcoLearn are recorded Here
