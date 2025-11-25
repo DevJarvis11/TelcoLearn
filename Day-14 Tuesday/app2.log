@@ -1,0 +1,2 @@
+2025-11-25 16:40:19,383 - INFO - Function called: fetch_api | Args: ('https://jsonplaceholder.typicode.com/todos/1',) | Kwargs: {}
+2025-11-25 16:40:20,262 - INFO - Function called: fetch_api | Args: ('https://invalid-example-123.com',) | Kwargs: {}

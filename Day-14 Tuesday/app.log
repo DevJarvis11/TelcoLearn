@@ -1,0 +1,8 @@
+2025-11-25 14:51:08,463 - INFO - Fetching: https://jsonplaceholder.typicode.com/todos/1
+2025-11-25 14:51:09,576 - INFO - Success
+2025-11-25 14:51:09,577 - INFO - Fetching: https://invalid-example-123.com
+2025-11-25 14:51:09,715 - ERROR - Error: HTTPSConnectionPool(host='invalid-example-123.com', port=443): Max retries exceeded with url: / (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000002129E2F20D0>: Failed to resolve 'invalid-example-123.com' ([Errno 11001] getaddrinfo failed)"))
+2025-11-25 16:30:54,858 - INFO - Function called: fetch_api | Args: ('https://jsonplaceholder.typicode.com/todos/1',) | Kwargs: {}
+2025-11-25 16:30:55,912 - INFO - Function called: fetch_api | Args: ('https://invalid-example-123.com',) | Kwargs: {}
+2025-11-25 16:39:52,317 - INFO - Function called: fetch_api | Args: ('https://jsonplaceholder.typicode.com/todos/1',) | Kwargs: {}
+2025-11-25 16:39:56,520 - INFO - Function called: fetch_api | Args: ('https://invalid-example-123.com',) | Kwargs: {}
