@@ -6,9 +6,6 @@ import logging
 import requests
 import datetime
 
-# ---------------------------------------------------
-# Task 3: Custom Exception (Robust Client Pattern)
-# ---------------------------------------------------
 class APIResponseError(Exception):
     """
     Custom exception for API 4xx/5xx errors with structured payload support.
@@ -19,30 +16,26 @@ class APIResponseError(Exception):
         self.payload = payload
 
 
-# ---------------------------------------------------
-# Task 2: Structured Logging (File + Console)
-# (NO pythonjsonlogger)
-# ---------------------------------------------------
+
 def setup_logging():
     logger = logging.getLogger()
 
-    # Clear handlers to avoid duplicates
     if logger.hasHandlers():
         logger.handlers.clear()
 
     logger.setLevel(logging.INFO)
 
-    # JSON-style log format
+  
     formatter = logging.Formatter(
         '{"time":"%(asctime)s","level":"%(levelname)s","message":"%(message)s"}'
     )
 
-    # File handler
+ 
     file_handler = logging.FileHandler("project.log")
     file_handler.setFormatter(formatter)
     logger.addHandler(file_handler)
 
-    # Console handler
+   
     stream_handler = logging.StreamHandler()
     stream_handler.setFormatter(formatter)
     logger.addHandler(stream_handler)
@@ -53,9 +46,7 @@ def setup_logging():
 logger = setup_logging()
 
 
-# ---------------------------------------------------
-# Robust API Client Pattern
-# ---------------------------------------------------
+
 class RobustClient:
     """
     Demonstrates a robust API client with proper error handling.
@@ -81,9 +72,6 @@ class RobustClient:
             return None
 
 
-# ---------------------------------------------------
-# API Specification Analysis
-# ---------------------------------------------------
 def analyze_apis():
     files = glob.glob("specs/*.yaml")
 
@@ -128,7 +116,7 @@ def analyze_apis():
                     method_upper = method.upper()
                     stats["methods"][method_upper] = stats["methods"].get(method_upper, 0) + 1
 
-                    # Authentication logic
+                  
                     endpoint_security = details.get("security", global_security)
                     current_auth = []
 
@@ -140,7 +128,6 @@ def analyze_apis():
                     else:
                         current_auth = ["None"]
 
-                    # Response logic
                     responses = details.get("responses", {})
                     if not responses:
                         stats["missing_responses"] += 1
@@ -168,11 +155,8 @@ def analyze_apis():
                 "error": str(e)
             }))
 
-    # ---------------------------------------------------
-    # Deliverables
-    # ---------------------------------------------------
 
-    # 1. Metadata JSON (overwrite)
+
     with open("metadata.json", "w") as f:
         json.dump(metadata, f, indent=2)
 
@@ -181,7 +165,6 @@ def analyze_apis():
         "records": len(metadata)
     }))
 
-    # 2. Summary Report (append)
     timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     report = f"""
 ========================================
@@ -206,8 +189,5 @@ Endpoints with No Response Definition: {stats['missing_responses']}
     print(report)
 
 
-# ---------------------------------------------------
-# Entry Point
-# ---------------------------------------------------
 if __name__ == "__main__":
     analyze_apis()
