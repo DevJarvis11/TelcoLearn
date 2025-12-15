@@ -1,213 +1,117 @@
 import os
-import glob
-import yaml
 import json
+import yaml
 import logging
-import requests
-import datetime
+import sys
+from datetime import datetime
 
-# ---------------------------------------------------
-# Task 3: Custom Exception (Robust Client Pattern)
-# ---------------------------------------------------
-class APIResponseError(Exception):
-    """
-    Custom exception for API 4xx/5xx errors with structured payload support.
-    """
-    def __init__(self, message, status_code, payload=None):
-        super().__init__(message)
-        self.status_code = status_code
-        self.payload = payload
+class JsonFormatter(logging.Formatter):
+    def format(self, record):
+        return json.dumps({
+            "timestamp": datetime.now().isoformat(),
+            "level": record.levelname,
+            "message": record.getMessage(),
+            "code": getattr(record, 'exception_code', 'INFO')
+        })
 
-
-# ---------------------------------------------------
-# Task 2: Structured Logging (File + Console)
-# (NO pythonjsonlogger)
-# ---------------------------------------------------
-def setup_logging():
-    logger = logging.getLogger()
-
-    # Clear handlers to avoid duplicates
-    if logger.hasHandlers():
-        logger.handlers.clear()
-
-    logger.setLevel(logging.INFO)
-
-    # JSON-style log format
-    formatter = logging.Formatter(
-        '{"time":"%(asctime)s","level":"%(levelname)s","message":"%(message)s"}'
-    )
-
-    # File handler
-    file_handler = logging.FileHandler("project.log")
-    file_handler.setFormatter(formatter)
-    logger.addHandler(file_handler)
-
-    # Console handler
-    stream_handler = logging.StreamHandler()
-    stream_handler.setFormatter(formatter)
-    logger.addHandler(stream_handler)
-
+def setup_logger():
+    logger = logging.getLogger("3GPP")
+    logger.setLevel(logging.DEBUG)
+    if not logger.handlers:
+        handler = logging.StreamHandler(sys.stdout)
+        handler.setFormatter(JsonFormatter())
+        logger.addHandler(handler)
     return logger
+logger = setup_logger()
 
 
-logger = setup_logging()
+def parse_yaml_file(file_path):
+    try:
+        with open(file_path, 'r') as f:
+            data = yaml.safe_load(f)
+            logger.info(f"Loaded: {os.path.basename(file_path)}")
+            return data
+    except Exception as e:
+        logger.error(f"load fail {file_path}: {e}", extra={'exception_code': 'FILE-ERR'})
+        return None
 
-
-# ---------------------------------------------------
-# Robust API Client Pattern
-# ---------------------------------------------------
-class RobustClient:
-    """
-    Demonstrates a robust API client with proper error handling.
-    """
-    def fetch_spec(self, url):
-        try:
-            response = requests.get(url, timeout=10)
-
-            if 400 <= response.status_code < 600:
-                raise APIResponseError(
-                    f"API Error {response.status_code}",
-                    response.status_code,
-                    payload=response.text
-                )
-
-            return response.text
-
-        except requests.RequestException as e:
-            logger.error(json.dumps({
-                "event": "network_failure",
-                "error": str(e)
-            }))
-            return None
-
-
-# ---------------------------------------------------
-# API Specification Analysis
-# ---------------------------------------------------
-def analyze_apis():
-    files = glob.glob("specs/*.yaml")
-
-    if not files:
-        logger.error(json.dumps({
-            "event": "no_yaml_files",
-            "path": "specs/"
-        }))
-        return
-
-    stats = {
-        "total_endpoints": 0,
-        "methods": {},
-        "auth_methods": set(),
-        "codes": {},
-        "missing_responses": 0,
-        "files_processed": 0
+def extract_api_details(data, filename):
+    if not data: return None
+    info_section = data.get('info', {})
+    paths_section = data.get('paths', {})
+    
+    result = {
+        "filename": filename,
+        "title": info_section.get('title', 'No Title'),
+        "version": info_section.get('version', '0.0.0'),
+        "endpoints": []
     }
+    for path, methods in paths_section.items():
+        for method, details in methods.items():
+            if method.lower() in ['get', 'post', 'put', 'delete', 'patch']:
+                security = details.get('security', [])
+                auth_type = list(security[0].keys()) if security else ["None"]
+                responses = details.get('responses', {})
+                result["endpoints"].append({
+                    "path": path,
+                    "method": method.upper(),
+                    "auth": auth_type,
+                    "response_codes": list(responses.keys()),
+                    "has_response": len(responses) > 0
+                })
+    return result
 
-    metadata = []
+def calculate_stats(all_api):
+    stats = {
+        "total_apis": len(all_api),
+        "total_endpoints": 0,
+        "methods": {"GET": 0, "POST": 0, "PUT": 0, "DELETE": 0},
+        "coverage": 0.0
+    }
+    
+    valid_responses_count = 0
+    for api in all_api:
+        for ep in api['endpoints']:
+            stats["total_endpoints"] += 1
+            m = ep['method']
+            stats['methods'][m] = stats['methods'].get(m, 0) + 1
+            if ep['has_response']:
+                valid_responses_count += 1
 
-    logger.info(json.dumps({
-        "event": "analysis_started",
-        "file_count": len(files)
-    }))
+    if stats["total_endpoints"] > 0:
+        stats["coverage"] = round((valid_responses_count / stats["total_endpoints"]) * 100, 2)
+    return stats
 
-    for file_path in files:
-        try:
-            with open(file_path, "r") as f:
-                data = yaml.safe_load(f)
+def main():
+    folder = "specs"
+    data = []
 
-            stats["files_processed"] += 1
-            global_security = data.get("security", [])
-            paths = data.get("paths", {})
-
-            for path, methods in paths.items():
-                for method, details in methods.items():
-                    if method.lower() not in ["get", "post", "put", "delete", "patch"]:
-                        continue
-
-                    stats["total_endpoints"] += 1
-                    method_upper = method.upper()
-                    stats["methods"][method_upper] = stats["methods"].get(method_upper, 0) + 1
-
-                    # Authentication logic
-                    endpoint_security = details.get("security", global_security)
-                    current_auth = []
-
-                    if endpoint_security:
-                        for rule in endpoint_security:
-                            for scheme in rule.keys():
-                                stats["auth_methods"].add(scheme)
-                                current_auth.append(scheme)
-                    else:
-                        current_auth = ["None"]
-
-                    # Response logic
-                    responses = details.get("responses", {})
-                    if not responses:
-                        stats["missing_responses"] += 1
-
-                    for code in responses:
-                        stats["codes"][code] = stats["codes"].get(code, 0) + 1
-
-                    metadata.append({
-                        "file": os.path.basename(file_path),
-                        "endpoint": path,
-                        "method": method_upper,
-                        "auth_methods": current_auth,
-                        "response_codes": list(responses.keys())
-                    })
-
-            logger.info(json.dumps({
-                "event": "file_parsed",
-                "file": os.path.basename(file_path)
-            }))
-
-        except Exception as e:
-            logger.error(json.dumps({
-                "event": "file_parse_failed",
-                "file": file_path,
-                "error": str(e)
-            }))
-
-    # ---------------------------------------------------
-    # Deliverables
-    # ---------------------------------------------------
-
-    # 1. Metadata JSON (overwrite)
+    if not os.path.exists(folder):
+        print(f"ERROR : Folder '{folder}' missing, create and add .yaml files to it")
+        return
+    
+    files = [f for f in os.listdir(folder) if f.endswith(('.yaml', '.yml'))]
+    
+    if not files:
+        print(f"ERROR : No .yaml files found in the '{folder}'")
+        return
+    for file in files:
+        full_path = os.path.join(folder, file)
+        raw_yaml = parse_yaml_file(full_path)
+        
+        if raw_yaml:
+            details = extract_api_details(raw_yaml, file)
+            data.append(details)
+        
     with open("metadata.json", "w") as f:
-        json.dump(metadata, f, indent=2)
+        json.dump(data, f, indent=4)
+    logger.info("Created the metadata.json file - 1st Output")
 
-    logger.info(json.dumps({
-        "event": "metadata_written",
-        "records": len(metadata)
-    }))
+    summary_stats = calculate_stats(data)
+    with open("summary.json", "w") as f:
+        json.dump(summary_stats, f, indent=4)
+    logger.info("Created the summary.json file - 2nd Output")
+    
+    print("The 2 Output files have been created: metadata.json and summary.json")
 
-    # 2. Summary Report (append)
-    timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    report = f"""
-========================================
-RUN SUMMARY - {timestamp}
-========================================
-Total Files Parsed: {stats['files_processed']}
-Total Endpoints: {stats['total_endpoints']}
-Methods Distribution: {json.dumps(stats['methods'], indent=2)}
-Response Codes Observed: {json.dumps(stats['codes'], indent=2)}
-Authentication Methods: {list(stats['auth_methods'])}
-Endpoints with No Response Definition: {stats['missing_responses']}
-========================================
-"""
-
-    with open("README.txt", "a") as f:
-        f.write(report)
-
-    logger.info(json.dumps({
-        "event": "summary_appended"
-    }))
-
-    print(report)
-
-
-# ---------------------------------------------------
-# Entry Point
-# ---------------------------------------------------
-if __name__ == "__main__":
-    analyze_apis()
+main()
