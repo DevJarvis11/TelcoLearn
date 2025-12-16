@@ -1,0 +1,139 @@
+    1  sudo apt update
+    2  sudo apt upgrade
+    3  sudo apt install build-essentials git curl
+    4  sudo apt install build-essential git curl
+    5  sudo apt install openssh-server
+    6  sudo systemctl enable ssh
+    7  sudo systemctl start ssh
+    8  ssh ankith@ankith-VirtualBox
+    9  pwd
+   10  pws
+   11  pwd
+   12  cd
+   13  ls -l
+   14  cd Downloads/
+   15  ls
+   16  gedit File.tx
+   17  gedit File.txt
+   18  touch File.txt
+   19  ls
+   20  cd ..
+   21  cd Desktop
+   22  ls
+   23  pwd
+   24  cat File.txt 
+   25  shata teri
+   26  clear
+   27  mkdir TelcoLe
+   28  cd TelcoLe/
+   29  touch File.py
+   30  ls
+   31  cd ..
+   32  rmdir TelcoLe/
+   33  cd ..
+   34  exit
+   35  ping 
+   36  ping 127.0.0.1
+   37  ifconfig
+   38  if config
+   39  ip add
+   40  ip a
+   41  ifconfig
+   42  sudo apt install net-tools
+   43  ifconfig
+   44  q
+   45  ip a
+   46  lo
+   47  ip a
+   48  sudo nano /etc/netplan/01-netcfg.yaml
+   49  sudo netplan apply
+   50  sudo nano /etc/netplan/01-netcfg.yaml
+   51  sudo netplan apply
+   52  sudo nano /etc/netplan/01-netcfg.yaml
+   53  sudo netplan apply
+   54  sudo nano /etc/netplan/01-netcfg.yaml
+   55  sudo netplan apply
+   56  sudo nano /etc/netplan/01-netcfg.yaml
+   57  sudo netplan apply
+   58  sudo nano /etc/netplan/01-netcfg.yaml
+   59  sudo netplan apply
+   60  sudo nano /etc/netplan/01-netcfg.yaml
+   61  sudo netplan apply
+   62  sudo nano /etc/netplan/01-netcfg.yaml
+   63  sudo netplan apply
+   64  sudo nano /etc/netplan/01-netcfg.yaml
+   65  sudo netplan apply
+   66  sudo nano /etc/netplan/01-netcfg.yaml
+   67  sudo netplan apply
+   68  sudo chmod 600 /etc/netplan/01-network-manager-all.yaml
+   69  sudo chmod 600 /etc/netplan/01-netcfg.yaml
+   70  ip a
+   71  sudo netplan apply
+   72  ip addr
+   73  exit
+   74  ssh ankith@192.168.10.101
+   75  exit
+   76  ip addr
+   77  ip addr show
+   78  ip addr add 192.168.1.10/24 dev enp0s3
+   79  sudo ip addr add 192.168.1.10/24 dev enp0s3
+   80  ip addr show
+   81  sudo ip link set enp0s3 dowm
+   82  sudo ip link set enp0s3 up
+   83  ipa
+   84  ip a
+   85  sudo ip link set enp0s3 down
+   86  ip a
+   87  ip route show
+   88  route -n
+   89  ifconfig
+   90  ifcongif enp0s3
+   91  ifcongif enp0s3 up
+   92  ifcongif enp0s3
+   93  sudo ifconfig enp0s3
+   94  ip route show
+   95  history >> date.txt
+   96  route -n
+   97  history >> date.txt
+   98  man netstat
+   99  man ss
+  100  netstat -tulnp
+  101  ss -tulnp
+  102  netstat -
+  103  netstat -s
+  104  ss -s
+  105  cd etc/netplan/
+  106  cd /etc/netplan/
+  107  ls
+  108  cat 01-netcfg.yaml 
+  109  sudo cat 01-netcfg.yaml 
+  110  cd ../..
+  111  cd /etc/sysconfig/
+  112  cd /etc/
+  113  ls
+  114  cd systemd/
+  115  cat network
+  116  ls
+  117  cat networkd.conf 
+  118  cd ../..
+  119  cd /etc/resolv.conf
+  120  cd /etc
+  121  ls
+  122  cat resolv.conf 
+  123  history >> date.txt
+  124  sudo history >> date.txt
+  125  chmod +x date.txt
+  126  history >> Day11Commands.txt
+  127  nano date.txt
+  128  chmod +w date.txt
+  129  cd ..
+  130  history >> date.txt
+  131  chmod +w date.txt
+  132  history >> D11Cmd.txt
+  133  ls -l
+  134  history
+  135  cd /Desktop/TelcoLearn/
+  136  ls
+  137  cd 
+  138  ls
+  139  history >> D11Cmd.txt

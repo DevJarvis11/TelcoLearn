@@ -1,0 +1,43 @@
+Run 1 at Fri Nov 21 12:18:44 PM IST 2025
+1: lo    inet 127.0.0.1/8 scope host lo\       valid_lft forever preferred_lft forever
+2: enp0s3    inet 192.168.10.101/24 brd 192.168.10.255 scope global noprefixroute enp0s3\       valid_lft forever preferred_lft forever
+2: enp0s3    inet 10.0.2.15/24 brd 10.0.2.255 scope global dynamic noprefixroute enp0s3\       valid_lft 84563sec preferred_lft 84563sec
+-------------------------------------
+Run 2 at Fri Nov 21 12:19:00 PM IST 2025
+1: lo    inet 127.0.0.1/8 scope host lo\       valid_lft forever preferred_lft forever
+2: enp0s3    inet 192.168.10.101/24 brd 192.168.10.255 scope global noprefixroute enp0s3\       valid_lft forever preferred_lft forever
+2: enp0s3    inet 10.0.2.15/24 brd 10.0.2.255 scope global dynamic noprefixroute enp0s3\       valid_lft 86395sec preferred_lft 86395sec
+-------------------------------------
+Run 3 at Fri Nov 21 12:19:10 PM IST 2025
+1: lo    inet 127.0.0.1/8 scope host lo\       valid_lft forever preferred_lft forever
+2: enp0s3    inet 192.168.10.101/24 brd 192.168.10.255 scope global noprefixroute enp0s3\       valid_lft forever preferred_lft forever
+2: enp0s3    inet 10.0.2.15/24 brd 10.0.2.255 scope global dynamic noprefixroute enp0s3\       valid_lft 86396sec preferred_lft 86396sec
+-------------------------------------
+Run 4 at Fri Nov 21 12:19:20 PM IST 2025
+1: lo    inet 127.0.0.1/8 scope host lo\       valid_lft forever preferred_lft forever
+2: enp0s3    inet 192.168.10.101/24 brd 192.168.10.255 scope global noprefixroute enp0s3\       valid_lft forever preferred_lft forever
+2: enp0s3    inet 10.0.2.15/24 brd 10.0.2.255 scope global dynamic noprefixroute enp0s3\       valid_lft 86396sec preferred_lft 86396sec
+-------------------------------------
+Run 5 at Fri Nov 21 12:19:31 PM IST 2025
+1: lo    inet 127.0.0.1/8 scope host lo\       valid_lft forever preferred_lft forever
+2: enp0s3    inet 192.168.10.101/24 brd 192.168.10.255 scope global noprefixroute enp0s3\       valid_lft forever preferred_lft forever
+2: enp0s3    inet 10.0.2.15/24 brd 10.0.2.255 scope global dynamic noprefixroute enp0s3\       valid_lft 86396sec preferred_lft 86396sec
+-------------------------------------
+Run 6 at Fri Nov 21 12:19:41 PM IST 2025
+1: lo    inet 127.0.0.1/8 scope host lo\       valid_lft forever preferred_lft forever
+2: enp0s3    inet 192.168.10.101/24 brd 192.168.10.255 scope global noprefixroute enp0s3\       valid_lft forever preferred_lft forever
+2: enp0s3    inet 10.0.2.15/24 brd 10.0.2.255 scope global dynamic noprefixroute enp0s3\       valid_lft 86396sec preferred_lft 86396sec
+-------------------------------------
+Run 7 at Fri Nov 21 12:19:51 PM IST 2025
+1: lo    inet 127.0.0.1/8 scope host lo\       valid_lft forever preferred_lft forever
+2: enp0s3    inet 192.168.10.101/24 brd 192.168.10.255 scope global noprefixroute enp0s3\       valid_lft forever preferred_lft forever
+2: enp0s3    inet 10.0.2.15/24 brd 10.0.2.255 scope global dynamic noprefixroute enp0s3\       valid_lft 86395sec preferred_lft 86395sec
+-------------------------------------
+Run 8 at Fri Nov 21 12:20:02 PM IST 2025
+1: lo    inet 127.0.0.1/8 scope host lo\       valid_lft forever preferred_lft forever
+2: enp0s3    inet 192.168.10.101/24 brd 192.168.10.255 scope global noprefixroute enp0s3\       valid_lft forever preferred_lft forever
+2: enp0s3    inet 10.0.2.15/24 brd 10.0.2.255 scope global dynamic noprefixroute enp0s3\       valid_lft 86395sec preferred_lft 86395sec
+-------------------------------------
+Run 1 at Fri Nov 21 12:22:19 PM IST 2025
+1: lo    inet 127.0.0.1/8 scope host lo\       valid_lft forever preferred_lft forever
+-------------------------------------
