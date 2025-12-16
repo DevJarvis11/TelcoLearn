@@ -1,0 +1,233 @@
+    1  sudo apt update
+    2  sudo apt upgrade
+    3  sudo apt install build-essentials git curl
+    4  sudo apt install build-essential git curl
+    5  sudo apt install openssh-server
+    6  sudo systemctl enable ssh
+    7  sudo systemctl start ssh
+    8  ssh ankith@ankith-VirtualBox
+    9  pwd
+   10  pws
+   11  pwd
+   12  cd
+   13  ls -l
+   14  cd Downloads/
+   15  ls
+   16  gedit File.tx
+   17  gedit File.txt
+   18  touch File.txt
+   19  ls
+   20  cd ..
+   21  cd Desktop
+   22  ls
+   23  pwd
+   24  cat File.txt 
+   25  shata teri
+   26  clear
+   27  mkdir TelcoLe
+   28  cd TelcoLe/
+   29  touch File.py
+   30  ls
+   31  cd ..
+   32  rmdir TelcoLe/
+   33  cd ..
+   34  exit
+   35  ping 
+   36  ping 127.0.0.1
+   37  ifconfig
+   38  if config
+   39  ip add
+   40  ip a
+   41  ifconfig
+   42  sudo apt install net-tools
+   43  ifconfig
+   44  q
+   45  ip a
+   46  lo
+   47  ip a
+   48  sudo nano /etc/netplan/01-netcfg.yaml
+   49  sudo netplan apply
+   50  sudo nano /etc/netplan/01-netcfg.yaml
+   51  sudo netplan apply
+   52  sudo nano /etc/netplan/01-netcfg.yaml
+   53  sudo netplan apply
+   54  sudo nano /etc/netplan/01-netcfg.yaml
+   55  sudo netplan apply
+   56  sudo nano /etc/netplan/01-netcfg.yaml
+   57  sudo netplan apply
+   58  sudo nano /etc/netplan/01-netcfg.yaml
+   59  sudo netplan apply
+   60  sudo nano /etc/netplan/01-netcfg.yaml
+   61  sudo netplan apply
+   62  sudo nano /etc/netplan/01-netcfg.yaml
+   63  sudo netplan apply
+   64  sudo nano /etc/netplan/01-netcfg.yaml
+   65  sudo netplan apply
+   66  sudo nano /etc/netplan/01-netcfg.yaml
+   67  sudo netplan apply
+   68  sudo chmod 600 /etc/netplan/01-network-manager-all.yaml
+   69  sudo chmod 600 /etc/netplan/01-netcfg.yaml
+   70  ip a
+   71  sudo netplan apply
+   72  ip addr
+   73  exit
+   74  ssh ankith@192.168.10.101
+   75  exit
+   76  ip addr show
+   77  ip addr add 192.168.1.10/24 dev enp0s3
+   78  sudo ip addr add 192.168.1.10/24 dev enp0s3
+   79  ip addr show
+   80  sudo ip link set enp0s3 dowm
+   81  sudo ip link set enp0s3 up
+   82  ipa
+   83  ip a
+   84  sudo ip link set enp0s3 down
+   85  ip a
+   86  ip route show
+   87  route -n
+   88  ifconfig
+   89  ifcongif enp0s3
+   90  ifcongif enp0s3 up
+   91  ifcongif enp0s3
+   92  sudo ifconfig enp0s3
+   93  ip route show
+   94  history >> date.txt
+   95  route -n
+   96  history >> date.txt
+   97  man netstat
+   98  man ss
+   99  netstat -tulnp
+  100  ss -tulnp
+  101  netstat -
+  102  netstat -s
+  103  ss -s
+  104  cd etc/netplan/
+  105  cd /etc/netplan/
+  106  ls
+  107  cat 01-netcfg.yaml 
+  108  sudo cat 01-netcfg.yaml 
+  109  cd ../..
+  110  cd /etc/sysconfig/
+  111  cd /etc/
+  112  ls
+  113  cd systemd/
+  114  cat network
+  115  ls
+  116  cat networkd.conf 
+  117  cd ../..
+  118  cd /etc/resolv.conf
+  119  cd /etc
+  120  ls
+  121  cat resolv.conf 
+  122  history >> date.txt
+  123  sudo history >> date.txt
+  124  chmod +x date.txt
+  125  history >> Day11Commands.txt
+  126  nano date.txt
+  127  chmod +w date.txt
+  128  cd ..
+  129  history >> date.txt
+  130  chmod +w date.txt
+  131  history >> D11Cmd.txt
+  132  ls -l
+  133  history
+  134  cd /Desktop/TelcoLearn/
+  135  ls
+  136  cd 
+  137  ls
+  138  history >> D11Cmd.txt
+  139  cat D11Cmd.txt 
+  140  ls
+  141  /
+  142  cd /
+  143  history
+  144  history >> D11Cmd.txt
+  145  ls -l
+  146  cd /etc/
+  147  ls
+  148  cat ucf.conf 
+  149  cd ..
+  150  ip link show
+  151  ping -c 3 youtube.com
+  152  ping -c 3 google.com
+  153  ping youtube.com -c 3
+  154  ping google.com -c 3
+  155  ping www.google.com
+  156  cd
+  157  ping google.com -c 3
+  158  cd /
+  159  ping
+  160  ping ip
+  161  ping 8.8.8.8
+  162  cd
+  163  ping 8.8.8.8
+  164  cd /
+  165  ls
+  166  cd /etc/
+  167  cd /systemd
+  168  ls
+  169  traceroute google.com
+  170  dig googlr.com
+  171  cd ..
+  172  nmcli
+  173  nmcli device show
+  174  systemctl status ssh
+  175  systemctl stop ssh
+  176  systemctl status ssh
+  177  systemctl stop ssh
+  178  sudo systemctl status ssh
+  179  systemctl status ssh
+  180  ping 172.16.30.1
+  181  apt update
+  182  apt upgrade
+  183  apt install git
+  184  apt install curl
+  185  apt install jq
+  186  git clone https://github.com/mishakorzik/UserFinder
+  187  sudo apt update
+  188  sudo apt install git
+  189  sudo apt install curl
+  190  sudo apt install jq
+  191  ls
+  192  cd UserFinder
+  193  ls
+  194  bash UserFinder.sh
+  195  cd ..
+  196  ls
+  197  git clone https://github.com/Daxxtropezz/CamHacker.git
+  198  apt install sysbench
+  199  sudo apt install sysbench
+  200  sudo apt install stress-ng
+  201  sudo apt install iperf3
+  202  sudo apt install fio
+  203  sysbench
+  204  man sysbench
+  205  sudo apt update
+  206  dd if=/dev/zero of=test.img bs=1G count=1
+  207  man dd
+  208  lspci -v
+  209  lspci | grep -i ether
+  210  sudo apt install dpdk dpdk-dev hugepages
+  211  sudo apt install dpdk dpdk-dev
+  212  sudo apt install dpdk-doc
+  213  cd /proc/sys/vm/
+  214  ls
+  215  cat nr_hugepages
+  216  grep -i huge /proc/meminfo 
+  217  echo 1024 | sudo tee /proc/sys/vm/nr_hugepages
+  218  grep -i huge /proc/meminfo 
+  219  echo 1024 | sudo tee /proc/sys/vm/nr_hugepages
+  220  grep -i huge /proc/meminfo 
+  221  cd ../../..
+  222  ls
+  223  cd ..
+  224  cd /
+  225  /
+  226  ~
+  227  cd ~
+  228  ls
+  229  cd Desktop/
+  230  history << File.txt
+
+
+  231  history >> File.txt
