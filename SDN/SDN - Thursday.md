@@ -36,9 +36,9 @@ Throughout this lab, **multiple terminals are required**.
 
 ---
 
-# =========================================================
+# ======================================
 # TASK 1: TOPOLOGY DISCOVERY USING RYU
-# =========================================================
+# ======================================
 
 ## OBJECTIVE
 Discover switches and links dynamically using RYU’s topology discovery mechanism.
@@ -129,9 +129,9 @@ sudo mn -c
 
 ---
 
-# =========================================================
+# ===========================================
 # TASK 2: REST API FOR RYU (FLOW PROGRAMMING)
-# =========================================================
+# ===========================================
 
 ## OBJECTIVE
 Install OpenFlow rules using RYU REST APIs.
@@ -227,9 +227,9 @@ sudo mn -c
 
 ---
 
-# =========================================================
+# ======================================================
 # TASK 3: CUSTOM TOPOLOGY USING PYTHON (HIGH-LEVEL API)
-# =========================================================
+# ======================================================
 
 ## OBJECTIVE
 Create a reusable topology using the Topo class.
@@ -297,9 +297,9 @@ sudo mn -c
 
 ---
 
-# =========================================================
+# ===============================================
 # TASK 4: MININET PYTHON CLASSES (LOW-LEVEL API)
-# =========================================================
+# ===============================================
 
 ## OBJECTIVE
 Manually create network using low-level Mininet classes.
